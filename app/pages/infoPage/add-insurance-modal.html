@@ -1,0 +1,53 @@
+<ion-toolbar primary>
+  <ion-title>Añadir nueva poliza de seguros</ion-title>
+  <ion-buttons end>
+    <button (click)="dismiss()">
+      <ion-icon name="close" ></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content class="insurance-modal">
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Compañía</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Numero de poliza</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Precio</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Tipo de seguro</ion-label>
+      <ion-select multiple="false">
+        <ion-option>Terceros</ion-option>
+        <ion-option>Terceros ampliado</ion-option>
+        <ion-option>Todo riesgo con franquicia</ion-option>
+        <ion-option>Todo riesgo</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Fecha de inicio</ion-label>
+      <ion-datetime displayFormat="MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Fecha de fin</ion-label>
+      <ion-datetime displayFormat="MM/YYYY" min="2012" max="2022" cancelText="Cancelar" doneText="Hecho" [(ngModel)]="myDate"></ion-datetime>
+    </ion-item>
+
+    <button block>
+      Guardar
+    </button>
+
+  </ion-list>
+</ion-content>

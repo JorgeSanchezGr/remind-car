@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title style="text-align: center;">
+      RemindCar
+    </ion-title>
+
+    <ion-buttons end>
+      <button (click)="showOptions()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="infoPage">
+
+
+
+  <ion-card>
+    <ion-card-content center>
+      <ion-card-title>{{car.brand}} {{car.model}}</ion-card-title>
+      <h5>{{car.plate}}</h5>
+      <h6>Año: {{car.year}}</h6>
+    </ion-card-content>
+  </ion-card>
+  <h4>Reparaciones</h4>
+  <ion-card *ngFor="let repair of car.repairs">
+    <ion-card-content>
+      <!--ion-card-title>{{car.brand}} {{car.model}}</ion-card-title-->
+      <!--h5>Tipo: {{repair.kind}}</h5-->
+      <h5>{{repair.description}}</h5>
+      <!--h5>Fecha: {{repair.date}}</h5-->
+      <h5 style="float: right;">Precio: {{repair.price}}€</h5>
+
+    </ion-card-content>
+  </ion-card>
+
+  <h4>Polizas de seguro</h4>
+  <ion-card *ngFor="let insurance of car.insurances">
+    <ion-card-content>
+      <!--ion-card-title>{{car.brand}} {{car.model}}</ion-card-title-->
+      <h5>Compañia: {{insurance.company}}</h5>
+      <h5>Numero de poliza: {{insurance.policy}}</h5>
+      <h5>Tipo de seguro: {{insurance.kind}}</h5>
+      <!--h5>Fecha de comienzo: {{insurance.startDate}}</h5>
+      <h5>Fecha de fin: {{insurance.endDate }}</h5-->
+      <h5 style="float: right;">Precio: {{insurance.price}}€</h5>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

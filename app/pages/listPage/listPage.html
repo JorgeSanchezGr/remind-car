@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-title style="text-align: center;">RemindCar</ion-title>
+
+    <ion-buttons end>
+      <button (click)="addNewCar()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="listPage">
+
+  <ion-card *ngFor="let car of cars" (click)="moreInfo(car)">
+
+    <ion-card-content>
+
+      <ion-card-title>
+        {{car.brand}} {{car.model}}
+      </ion-card-title>
+      <img src="img/car.png" />
+      <p>
+        {{car.plate}}
+      </p>
+
+    </ion-card-content>
+  </ion-card>
+
+  <button (click)="insertMock()">Insertar datos de prueba</button>
+
+</ion-content>
