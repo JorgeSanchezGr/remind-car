@@ -1,0 +1,97 @@
+<ion-toolbar primary>
+  <ion-title>Añadir nuevo vehiculo</ion-title>
+  <ion-buttons end>
+    <button (click)="dismiss()">
+      <ion-icon name="close" ></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content class="modal">
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Marca</ion-label>
+      <ion-select multiple="false" [(ngModel)]="car.brand">
+        <ion-option>Alfa Romeo</ion-option>
+        <ion-option>Aston Martin </ion-option>
+        <ion-option>Audi</ion-option>
+        <ion-option>Bentley </ion-option>
+        <ion-option>BMW</ion-option>
+        <ion-option>Bugatti </ion-option>
+        <ion-option>Cadillac</ion-option>
+        <ion-option>Chevrolet</ion-option>
+        <ion-option>Chrysler</ion-option>
+        <ion-option>Citroën</ion-option>
+        <ion-option>Corvette</ion-option>
+        <ion-option>Dacia</ion-option>
+        <ion-option>Daihatsu </ion-option>
+        <ion-option>Dodge </ion-option>
+        <ion-option>Ferrari </ion-option>
+        <ion-option>Fiat</ion-option>
+        <ion-option>Ford</ion-option>
+        <ion-option>Honda</ion-option>
+        <ion-option>Hummer</ion-option>
+        <ion-option>Hyundai </ion-option>
+        <ion-option>Infiniti </ion-option>
+        <ion-option>Isuzu </ion-option>
+        <ion-option>Jaguar </ion-option>
+        <ion-option>Jeep </ion-option>
+        <ion-option>Kia</ion-option>
+        <ion-option>Lamborghini</ion-option>
+        <ion-option>Lancia</ion-option>
+        <ion-option>Land Rover</ion-option>
+        <ion-option>Lexus</ion-option>
+        <ion-option>Lotus </ion-option>
+        <ion-option>Maserati </ion-option>
+        <ion-option>Maybach </ion-option>
+        <ion-option>Mazda </ion-option>
+        <ion-option>Mercedes</ion-option>
+        <ion-option>MG Rover </ion-option>
+        <ion-option>Mini</ion-option>
+        <ion-option>Mitsubishi</ion-option>
+        <ion-option>Morgan </ion-option>
+        <ion-option>Nissan</ion-option>
+        <ion-option>Opel</ion-option>
+        <ion-option>Peugeot</ion-option>
+        <ion-option>Pontiac </ion-option>
+        <ion-option>Porsche</ion-option>
+        <ion-option>Renault</ion-option>
+        <ion-option>Rolls-Royce </ion-option>
+        <ion-option>Rover</ion-option>
+        <ion-option>Saab</ion-option>
+        <ion-option>Santana </ion-option>
+        <ion-option>Seat</ion-option>
+        <ion-option>Skoda </ion-option>
+        <ion-option>Smart</ion-option>
+        <ion-option>Ssangyong </ion-option>
+        <ion-option>Subaru</ion-option>
+        <ion-option>Suzuki</ion-option>
+        <ion-option>Tata </ion-option>
+        <ion-option>Toyota</ion-option>
+        <ion-option>Volkswagen</ion-option>
+        <ion-option>Volvo</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Modelo</ion-label>
+      <ion-input type="text" [(ngModel)]="car.model"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Matricula</ion-label>
+      <ion-input type="text" [(ngModel)]="car.plate"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Año</ion-label>
+      <ion-input type="number" [(ngModel)]="car.year"></ion-input>
+    </ion-item>
+
+    <button block (click)="save()">
+      Guardar
+    </button>
+
+  </ion-list>
+</ion-content>

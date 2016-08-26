@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {ViewController, NavController, NavParams, ActionSheetController, } from 'ionic-angular';
-import {Car} from '../../models/models';
+import {Car, Insurance, Repair} from '../../models/models';
 import {CarService} from '../../services/car.service';
 
 import { ModalController } from 'ionic-angular';
@@ -15,6 +15,10 @@ export class InfoPage {
   constructor(private nav: NavController, private navParams: NavParams, private carService: CarService, public modalCtrl: ModalController, public actionSheetCtrl: ActionSheetController) {
     this.car = this.navParams.get('item');
 
+    this.refresh();
+  }
+
+  refresh() {
     this.carService.getInsurances(this.car.plate)
       .then((res) => {
         var insurances = [];
@@ -50,12 +54,6 @@ export class InfoPage {
           handler: () => {
             this.openModal(AddInsuranceModal)
           }
-        }, {
-          text: 'Cancelar',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
         }
       ]
     });
@@ -63,33 +61,30 @@ export class InfoPage {
   }
 
   openModal(page) {
-    let modal = this.modalCtrl.create(page);
+    let modal = this.modalCtrl.create(page, { plate: this.car.plate });
+    modal.onDidDismiss(()=>this.refresh() )
     modal.present();
   }
 }
-
-/* 
-    DatePicker.show({
-      date: new Date(),
-      mode: 'date',
-      locale: 'es_ES',
-      doneButtonLabel: 'Hecho',
-      cancelButtonLabel: 'Cancelar'
-    }).then(
-      date => console.log("Got date: ", date),
-      err => console.log("Error occurred while getting date:", err)
-      );
-  }*/
 
 @Component({
   templateUrl: 'build/pages/infoPage/add-insurance-modal.html',
   providers: [CarService]
 })
 export class AddInsuranceModal {
-  constructor(public viewCtrl: ViewController) {}
+  plate: string;
+  insurance: any = {};
+  constructor(public viewCtrl: ViewController, private carService: CarService, private navParams: NavParams) {
+    this.plate = this.navParams.get('plate')
+  }
 
   dismiss() {
     this.viewCtrl.dismiss()
+  }
+
+  save() {
+    this.carService.insertInsuranceToCar(this.plate, this.insurance)
+    this.dismiss();
   }
 
 }
@@ -99,11 +94,17 @@ export class AddInsuranceModal {
   providers: [CarService]
 })
 export class AddRepairModal {
-  constructor(public viewCtrl: ViewController) { }
-
+  plate: string;
+  repair: any = {}
+  constructor(public viewCtrl: ViewController, private carService: CarService, private navParams: NavParams) {
+    this.plate = this.navParams.get('plate')
+  }
   dismiss() {
     this.viewCtrl.dismiss()
   }
+  save() {
+    this.carService.insertRepairToCar(this.plate, this.repair);
+    this.dismiss();
+  }
 
 }
-

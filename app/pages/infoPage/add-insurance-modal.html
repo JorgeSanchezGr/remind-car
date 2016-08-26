@@ -7,27 +7,127 @@
   </ion-buttons>
 </ion-toolbar>
 
-<ion-content class="insurance-modal">
+<ion-content class="modal">
   <ion-list>
 
     <ion-item>
-      <ion-label>Compañía</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label>Compañia</ion-label>
+      <ion-select multiple="false" [(ngModel)]="insurance.company">
+        <ion-option>AEGON</ion-option>
+        <ion-option>AMV Seguros</ion-option>
+        <ion-option>AXA</ion-option>
+        <ion-option>Active Seguros</ion-option>
+        <ion-option>Adeslas</ion-option>
+        <ion-option>Allianz</ion-option>
+        <ion-option>Antares</ion-option>
+        <ion-option>Asisa</ion-option>
+        <ion-option>Aviva</ion-option>
+        <ion-option>Balumba</ion-option>
+        <ion-option>CIGNA Seguros</ion-option>
+        <ion-option>Caser Seguros</ion-option>
+        <ion-option>Citymotos</ion-option>
+        <ion-option>Columbus</ion-option>
+        <ion-option>Corporación Directa</ion-option>
+        <ion-option>Direct Seguros</ion-option>
+        <ion-option>Europ Assistance</ion-option>
+        <ion-option>Expertia Seguros</ion-option>
+        <ion-option>FIATC Seguros</ion-option>
+        <ion-option>Fidelidade</ion-option>
+        <ion-option>Fénix Directo</ion-option>
+        <ion-option>Generali Seguros</ion-option>
+        <ion-option>Génesis Seguros</ion-option>
+        <ion-option>Hübener</ion-option>
+        <ion-option>Internauto</ion-option>
+        <ion-option>Lagun Aro</ion-option>
+        <ion-option>Liberty Seguros</ion-option>
+        <ion-option>MAPFRE</ion-option>
+        <ion-option>Metlife</ion-option>
+        <ion-option>Mundo Viajeros Seguros</ion-option>
+        <ion-option>Murimar</ion-option>
+        <ion-option>Mussap</ion-option>
+        <ion-option>Mutua Madrileña</ion-option>
+        <ion-option>Mutua de Propietarios</ion-option>
+        <ion-option>Nationale Suisse</ion-option>
+        <ion-option>Next Seguros</ion-option>
+        <ion-option>Nuez</ion-option>
+        <ion-option>Néctar</ion-option>
+        <ion-option>Pelayo</ion-option>
+        <ion-option>Plus Ultra Seguros</ion-option>
+        <ion-option>Previsora Agro Industrial</ion-option>
+        <ion-option>Previsora General</ion-option>
+        <ion-option>Qualitas Auto</ion-option>
+        <ion-option>REA</ion-option>
+        <ion-option>Race Seguros</ion-option>
+        <ion-option>Reale Seguros</ion-option>
+        <ion-option>Regal Seguros</ion-option>
+        <ion-option>Segurisima</ion-option>
+        <ion-option>Segurmoto MMT</ion-option>
+        <ion-option>Siente Salud</ion-option>
+        <ion-option>Sovag</ion-option>
+        <ion-option>Verti Seguros</ion-option>
+        <ion-option>W.R. Berkley</ion-option>
+        <ion-option>Zurich Seguros</ion-option>
+        <ion-option>Agrupació Mutua</ion-option>
+        <ion-option>Alico</ion-option>
+        <ion-option>Amic</ion-option>
+        <ion-option>April Iberia</ion-option>
+        <ion-option>Arag</ion-option>
+        <ion-option>Aresa</ion-option>
+        <ion-option>Ascat Seguros Generales</ion-option>
+        <ion-option>Asefa Seguros</ion-option>
+        <ion-option>Atlantis Seguros</ion-option>
+        <ion-option>BBVA Seguros</ion-option>
+        <ion-option>Catalana Occidente</ion-option>
+        <ion-option>Clinicum Salut</ion-option>
+        <ion-option>Club Más Moto</ion-option>
+        <ion-option>DKV Seguros</ion-option>
+        <ion-option>Eurolloyd</ion-option>
+        <ion-option>GES Seguros</ion-option>
+        <ion-option>HDI Seguros</ion-option>
+        <ion-option>Helvetia Seguros</ion-option>
+        <ion-option>Hna</ion-option>
+        <ion-option>IMQ Seguros</ion-option>
+        <ion-option>Ineas</ion-option>
+        <ion-option>Línea Directa</ion-option>
+        <ion-option>MMT Seguros</ion-option>
+        <ion-option>Mercurio</ion-option>
+        <ion-option>Musepan</ion-option>
+        <ion-option>Mutua General de Catalunya</ion-option>
+        <ion-option>Mutua General de Seguros</ion-option>
+        <ion-option>Mutua Segorbina</ion-option>
+        <ion-option>Mutua Sevillana de Taxis</ion-option>
+        <ion-option>Mutua Tinerfeña</ion-option>
+        <ion-option>Mutua Universal</ion-option>
+        <ion-option>Mutua Valenciana Automovilista</ion-option>
+        <ion-option>Mutual Flequera de Catalunya</ion-option>
+        <ion-option>Mutualidad de Levante</ion-option>
+        <ion-option>Mutuavenir</ion-option>
+        <ion-option>Nortehispana</ion-option>
+        <ion-option>Ocaso Seguros</ion-option>
+        <ion-option>RACC Seguros</ion-option>
+        <ion-option>Sanitas</ion-option>
+        <ion-option>Santalucia Seguros</ion-option>
+        <ion-option>Santander Seguros</ion-option>
+        <ion-option>SegurCaixa</ion-option>
+        <ion-option>Seguros Bilbao</ion-option>
+        <ion-option>Soliss Seguros</ion-option>
+        <ion-option>Union Alcoyana</ion-option>
+      </ion-select>
     </ion-item>
 
     <ion-item>
       <ion-label>Numero de poliza</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="insurance.policy"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Precio</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="insurance.price"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Tipo de seguro</ion-label>
-      <ion-select multiple="false">
+      <ion-select multiple="false" [(ngModel)]="insurance.kind">
         <ion-option>Terceros</ion-option>
         <ion-option>Terceros ampliado</ion-option>
         <ion-option>Todo riesgo con franquicia</ion-option>
@@ -37,15 +137,15 @@
 
     <ion-item>
       <ion-label>Fecha de inicio</ion-label>
-      <ion-datetime displayFormat="MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+      <ion-datetime displayFormat="MM/YYYY" [(ngModel)]="insurance.startDate"></ion-datetime>
     </ion-item>
 
     <ion-item>
       <ion-label>Fecha de fin</ion-label>
-      <ion-datetime displayFormat="MM/YYYY" min="2012" max="2022" cancelText="Cancelar" doneText="Hecho" [(ngModel)]="myDate"></ion-datetime>
+      <ion-datetime displayFormat="MM/YYYY" min="2012" max="2022" cancelText="Cancelar" doneText="Hecho" [(ngModel)]="insurance.endDate"></ion-datetime>
     </ion-item>
 
-    <button block>
+    <button block (click)="save()">
       Guardar
     </button>
 

@@ -7,16 +7,37 @@
   </ion-buttons>
 </ion-toolbar>
 
-<ion-content class="repair-modal">
+<ion-content class="modal">
   <ion-list>
 
     <ion-item>
-      <ion-input type="text" placeholder="Username"></ion-input>
+      <ion-label>Descripción</ion-label>
+      <ion-input [(ngModel)]="repair.description" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="password" placeholder="Password"></ion-input>
+      <ion-label>Precio</ion-label>
+      <ion-input type="number" [(ngModel)]="repair.price"></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-label>Tipo de reparacion</ion-label>
+      <ion-select multiple="false" [(ngModel)]="repair.kind">
+        <ion-option>Mecanica</ion-option>
+        <ion-option>Chapa</ion-option>
+        <ion-option>Pintura</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="repair.date"></ion-datetime>
+    </ion-item>
+
+    <button block (click)="save()">
+      Guardar
+    </button>
+
 
   </ion-list>
 </ion-content>
