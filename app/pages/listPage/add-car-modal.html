@@ -1,5 +1,5 @@
 <ion-toolbar primary>
-  <ion-title>Añadir nuevo vehiculo</ion-title>
+  <ion-title>{{ title }}</ion-title>
   <ion-buttons end>
     <button (click)="dismiss()">
       <ion-icon name="close" ></ion-icon>
@@ -81,7 +81,7 @@
 
     <ion-item>
       <ion-label>Matricula</ion-label>
-      <ion-input type="text" [(ngModel)]="car.plate"></ion-input>
+      <ion-input [disabled]="editMode" type="text" [(ngModel)]="car.plate"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -91,6 +91,10 @@
 
     <button block (click)="save()">
       Guardar
+    </button>
+
+    <button block (click)="insertMock()">
+      Insertar mocks
     </button>
 
   </ion-list>

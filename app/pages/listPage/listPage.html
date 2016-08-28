@@ -15,21 +15,26 @@
 
 <ion-content padding class="listPage">
 
-  <ion-card *ngFor="let car of cars" (click)="moreInfo(car)">
+  <ion-card *ngFor="let car of cars">
 
     <ion-card-content>
-
-      <ion-card-title>
-        {{car.brand}} {{car.model}}
-      </ion-card-title>
       <img src="img/car.png" />
-      <p>
-        {{car.plate}}
-      </p>
+      <ion-button (click)="moreInfo(car)">
+        <ion-card-title>
+          {{car.brand}} {{car.model}}
+        </ion-card-title>
 
+        <p>
+          {{car.plate}}
+        </p>
+      </ion-button>
+      <ion-buttons end class="more-button">
+        <button clear (click)="showMoreOptions(car)">
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-buttons>
     </ion-card-content>
   </ion-card>
 
-  <button (click)="insertMock()">Insertar datos de prueba</button>
 
 </ion-content>
